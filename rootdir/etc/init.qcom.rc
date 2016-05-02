@@ -552,6 +552,7 @@ service adsprpcd /system/bin/adsprpcd
     user media
     group media
 
+<<<<<<< HEAD
 service usf_tester /system/bin/usf_tester
     user system
     group system inet
