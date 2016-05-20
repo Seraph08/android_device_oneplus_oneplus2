@@ -467,6 +467,7 @@ vendor/lib64/libsmemlog.so
 
 # Radio
 -app/fastdormancy/fastdormancy.apk
+-app/QtiTelephonyService/QtiTelephonyService.apk
 -app/shutdownlistener/shutdownlistener.apk
 bin/ipacm-diag
 bin/netmgrd
@@ -482,6 +483,8 @@ etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
 -framework/qcnvitems.jar
 -framework/qcrilhook.jar
+framework/qti-telephony-common.jar
+framework/QtiTelephonyServicelibrary.jar
 lib64/libparam.so
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/qti
@@ -493,6 +496,7 @@ vendor/lib64/liblqe.so
 -vendor/lib64/libmdmdetect.so
 vendor/lib64/libnetmgr.so
 vendor/lib64/libqcmaputils.so
+vendor/lib64/librcc.so
 vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/libril-qc-radioconfig.so
