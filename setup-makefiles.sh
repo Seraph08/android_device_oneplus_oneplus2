@@ -65,6 +65,11 @@ PRODUCT_PACKAGES += \\
     TimeService
 
 PRODUCT_PACKAGES += \\
+<<<<<<< HEAD
+=======
+    fastdormancy \\
+    QtiTelephonyService \\
+>>>>>>> 3cdda45... oneplus2: Enable telephony extension
     qcnvitems \\
     qcrilhook
 
@@ -162,7 +167,21 @@ LOCAL_CERTIFICATE := platform
 include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
+<<<<<<< HEAD
 LOCAL_MODULE := qcrilmsgtunnel
+=======
+LOCAL_MODULE := QtiTelephonyService
+LOCAL_MODULE_OWNER := $VENDOR
+LOCAL_SRC_FILES := proprietary/app/QtiTelephonyService/QtiTelephonyService.apk
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_MODULE_CLASS := APPS
+LOCAL_CERTIFICATE := platform
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := qcnvitems
+>>>>>>> 3cdda45... oneplus2: Enable telephony extension
 LOCAL_MODULE_OWNER := $VENDOR
 LOCAL_SRC_FILES := proprietary/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 LOCAL_MODULE_TAGS := optional
