@@ -126,6 +126,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
+    <add-resource type="integer" name="config_deviceHardwareKeys"></add-resource>
     <integer name="config_deviceHardwareKeys">83</integer>
 
     <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
@@ -139,8 +140,8 @@
             32 - Camera
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
-         config to 7. -->
-    <integer name="config_deviceHardwareWakeKeys">64</integer>
+         config to 7. 
+    <integer name="config_deviceHardwareWakeKeys">64</integer> -->
 
     <!-- Control the behavior when the user long presses the home button
             0 - Nothing
@@ -152,6 +153,7 @@
         This needs to match the constants in
         policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
     -->
+    <add-resource type="integer" name="config_longPressOnHomeBehavior"></add-resource>
     <integer name="config_longPressOnHomeBehavior">3</integer>
 
     <!-- Control the behavior when the user long presses the app switch button.
@@ -164,6 +166,7 @@
          This needs to match the constants in
          policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
     -->
+    <add-resource type="integer" name="config_longPressOnAppSwitchBehavior"></add-resource>
     <integer name="config_longPressOnAppSwitchBehavior">1</integer>
 
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
