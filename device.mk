@@ -94,7 +94,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    libop2_cam
+    sensors.hal.tof \
+    SnapdragonCamera
 
 # Charger
 PRODUCT_PACKAGES += \
