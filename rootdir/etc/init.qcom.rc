@@ -53,6 +53,11 @@ on post-fs-data
     chown radio radio /data/misc/radio/copy_complete
     chmod 0660 /data/misc/radio/copy_complete
 
+    # Laser AF
+    chown system system /dev/stmvl6180_ranging
+    symlink /dev/input/event2 /dev/stm_sensor
+
+
     write /sys/kernel/boot_adsp/boot 1
 
     mkdir /data/tombstones 0771 system system
