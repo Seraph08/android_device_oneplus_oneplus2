@@ -41,7 +41,7 @@ void vendor_load_properties(){
     char rf_version[PROP_VALUE_MAX];
     int rc;
 
-    rc = property_get("ro.cm.device", device);
+    rc = property_get("ro.board.platform", device);
     if (!rc || !ISMATCH(device, "oneplus2"))
         return;
 
