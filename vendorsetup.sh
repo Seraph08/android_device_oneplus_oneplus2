@@ -1,1 +1,1 @@
-add_lunch_combo cm_oneplus2-userdebug
+add_lunch_combo broken_oneplus2-userdebug
