@@ -76,7 +76,7 @@
 
     <!-- Does the battery LED support multiple colors?
          Used to decide if the user can change the colors -->
-    <add-resource type="bool" name="config_multiColorNotificationLed"></add-resource>
+    <add-resource type="bool" name="config_multiColorBatteryLed"></add-resource>
     <bool name="config_multiColorBatteryLed">true</bool>
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
