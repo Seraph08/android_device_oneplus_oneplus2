@@ -56,7 +56,8 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 1920
-TARGET_SCREEN_WIDTH := 1080 
+TARGET_SCREEN_WIDTH := 1080
+
 
 # Provides overrides to configure the Dalvik heap for a 4G phone
 PRODUCT_PROPERTY_OVERRIDES += \
