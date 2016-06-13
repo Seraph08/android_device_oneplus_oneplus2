@@ -301,9 +301,5 @@ PRODUCT_PACKAGES += \
     hostapd.accept \
     hostapd.deny
 
-# Doze mode
-PRODUCT_PACKAGES += \
-    OneplusDoze
-    
 # Inherit from oppo-common
 $(call inherit-product, device/oppo/common/common.mk)
