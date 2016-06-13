@@ -63,6 +63,7 @@ PRODUCT_PACKAGES += \\
 PRODUCT_PACKAGES += \\
     qcrilmsgtunnel \\
     libtime_genoff \\
+    libtime_genoff \\
     CNEService \\
     com.qti.dpmframework \\
     dpmapi \\
