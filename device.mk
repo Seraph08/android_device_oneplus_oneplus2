@@ -58,7 +58,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
-
 # Provides overrides to configure the Dalvik heap for a 4G phone
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=8m \
@@ -124,9 +123,8 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    sensors.hal.tof \
-    Snap
-
+    sensors.hal.tof 
+    
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
@@ -160,10 +158,6 @@ PRODUCT_PACKAGES += \
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     fingerprintd
-
-# Gello
-PRODUCT_PACKAGES += \
-    Gello
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -306,9 +300,5 @@ PRODUCT_PACKAGES += \
     hostapd.accept \
     hostapd.deny
 
-# Doze mode
-PRODUCT_PACKAGES += \
-    OneplusDoze
-    
 # Inherit from oppo-common
 $(call inherit-product, device/oppo/common/common.mk)
