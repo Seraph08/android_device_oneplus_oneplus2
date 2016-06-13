@@ -107,6 +107,12 @@ persist.sys.dpmd.nsrm=3
 #persist.dpm.nsrm.bkg.evt=3955
 #persist.dpm.loglevel=7825
 
+# Dexopt
+-ro.sys.fw.dex2oat_thread_count=4
+dalvik.vm.dex2oat-threads=2
+dalvik.vm.boot-dex2oat-threads=4
+dalvik.vm.image-dex2oat-threads=4
+
 # GPS
 persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.location
