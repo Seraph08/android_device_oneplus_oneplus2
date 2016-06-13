@@ -50,19 +50,25 @@ persist.radio.rat_on=combine
 persist.data.qmi.adb_logmask=0
 
 # Audio
-audio.offload.video=true
+ro.qc.sdk.audio.ssr=false
+persist.audio.ssr.3mic=false
+ro.qc.sdk.audio.fluencetype=fluence
 persist.audio.fluence.voicecall=true
 persist.audio.fluence.voicerec=false
 persist.audio.fluence.speaker=true
-ro.qc.sdk.audio.fluencetype=fluence
-ro.qc.sdk.audio.ssr=false
-persist.audio.ssr.3mic=false
-media.aac_51_output_enabled=true
+audio.offload.gapless.enabled=true
+audio.offload.buffer.size.kb=32
+audio.offload.video=true
+audio.offload.passthrough=false
+audio.offload.multiple.enabled=false
 audio.offload.pcm.16bit.enable=false
 audio.offload.pcm.24bit.enable=true
-use.voice.path.for.pcm.voip=true
-audio.offload.multiple.enabled=true
-audio.offload.gapless.enabled=true
+audio.deep_buffer.media=true
+av.debug.disable.pers.cache=true
+ro.audio.flinger_standbytime_ms=300
+tunnel.audio.encode = false
+
+# Media
 mm.enable.smoothstreaming=true
 audio.offload.buffer.size.kb=32
 audio.dolby.ds2.enabled=true
