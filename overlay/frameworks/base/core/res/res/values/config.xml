@@ -392,5 +392,9 @@
     <bool name="config_enableAutoPowerModes">true</bool>
 
     <integer name="config_buttonBrightnessSettingDefault">60</integer>
+    
+    <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be autodetected from the Configuration. -->
+    <add-resource type="bool" name="config_showNavigationBar"></add-resource>
+    <bool name="config_showNavigationBar">true</bool>
 
 </resources>
