@@ -321,5 +321,12 @@ PRODUCT_PACKAGES += \
     hostapd.accept \
     hostapd.deny
 
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    fsck.exfat \
+    e2fsck \
+    make_ext4fs \
+    setup_fs
+
 # Inherit from oppo-common
 $(call inherit-product, device/oppo/common/common.mk)
