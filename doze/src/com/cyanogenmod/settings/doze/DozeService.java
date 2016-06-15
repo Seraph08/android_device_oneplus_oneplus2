@@ -30,16 +30,6 @@ public class DozeService extends Service {
 
     private ProximitySensor mProximitySensor;
     private TiltSensor mTiltSensor;
-    private BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
-                onDisplayOn();
-            } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
-                onDisplayOff();
-            }
-        }
-    };
 
     @Override
     public void onCreate() {
@@ -49,7 +39,8 @@ public class DozeService extends Service {
 
         IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
         screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
-        registerReceiver(mScreenStateReceiver, screenStateFilter);
+        screenStateFilter.addAction(Intent.ACTION_DOZE_PULSE_REQUESTED);
+        this.registerReceiver(mScreenStateReceiver, screenStateFilter);
     }
 
     @Override
@@ -93,4 +84,28 @@ public class DozeService extends Service {
             mProximitySensor.enable();
         }
     }
+
+    private void onDozeRequested() {
+        if (DEBUG) Log.d(TAG, "Doze requested");
+        if (Utils.pickUpEnabled(this) && !Utils.tiltAlwaysEnabled(this)) {
+            mTiltSensor.enable();
+        }
+        if (!Utils.proximityAlwaysEnabled(this) && (Utils.handwaveGestureEnabled(this) ||
+                Utils.pocketGestureEnabled(this))) {
+            mProximitySensor.enable();
+        }
+    }
+
+    private BroadcastReceiver mScreenStateReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
+                onDisplayOn();
+            } else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
+                onDisplayOff();
+            } else if (intent.getAction().equals(Intent.ACTION_DOZE_PULSE_REQUESTED)) {
+                onDozeRequested();
+            }
+        }
+    };
 }
