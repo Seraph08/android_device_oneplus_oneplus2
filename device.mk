@@ -265,6 +265,13 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
+# Connectivity Engine support (CNE)
+PRODUCT_PACKAGES += \
+    cneapiclient \
+    com.quicinc.cne \
+    libcnefeatureconfig \
+    services-ext
+
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.msm8994

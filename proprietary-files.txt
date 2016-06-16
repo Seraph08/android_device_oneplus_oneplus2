@@ -227,28 +227,20 @@ etc/dpm/dpm.conf
 etc/dpm/nsrm/NsrmConfiguration.xml
 etc/permissions/com.qti.dpmframework.xml
 etc/permissions/dpmapi.xml
-framework/com.qti.dpmframework.jar
-framework/dpmapi.jar
-framework/tcmclient.jar
--priv-app/dpmserviceapp/dpmserviceapp.apk
+-framework/com.qti.dpmframework.jar
+-framework/dpmapi.jar
 vendor/lib/libdpmctmgr.so
 vendor/lib/libdpmfdmgr.so
 vendor/lib/libdpmframework.so
 vendor/lib/libdpmnsrm.so
-vendor/lib/libdpmtcm.so
 vendor/lib64/libdpmctmgr.so
 vendor/lib64/libdpmfdmgr.so
 vendor/lib64/libdpmframework.so
 vendor/lib64/libdpmnsrm.so
-vendor/lib64/libdpmtcm.so
 
 # DRM
 bin/qseecomd
-vendor/lib/hw/gatekeeper.msm8994.so
-vendor/lib/hw/keystore.msm8994.so
 vendor/lib/libQSEEComAPI.so
-vendor/lib64/hw/gatekeeper.msm8994.so
-vendor/lib64/hw/keystore.msm8994.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so

@@ -170,6 +170,20 @@ TARGET_NO_RPC := true
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 
+# QCOM hardware
+BOARD_USES_QCOM_HARDWARE := true
+BOARD_USES_QC_TIME_SERVICES := true
+
+# CNE and DPM
+BOARD_USES_QCNE := true
+BOARD_USES_DPM := true
+TARGET_LDPRELOAD := libNimsWrap.so
+
+# Oneplus modifications
+VENDOR_EDIT := yes
+COMMON_GLOBAL_CFLAGS := $(COMMON_GLOBAL_CFLAGS) -DVENDOR_EDIT
+COMMON_GLOBAL_CPPFLAGS := $(COMMON_GLOBAL_CPPFLAGS) -DVENDOR_EDIT
+
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
   ifeq ($(call match-word-in-list,$(TARGET_BUILD_VARIANT),user),true)
