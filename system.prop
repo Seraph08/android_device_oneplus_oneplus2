@@ -8,6 +8,27 @@ ro.build.fingerprint=OnePlus/OnePlus2/OnePlus2:6.0.1/MMB29M/1447840820:user/rele
 # RIL
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
+ril.subscription.types=NV,RUIM
+ro.telephony.call_ring.multiple=false
+persist.radio.multisim.config=dsds
+persist.radio.apm_sim_not_pwdn=1
+persist.radio.sib16_support=1
+persist.radio.sw_mbn_update=0
+persist.radio.start_ota_daemon=1
+persist.radio.rat_on=combine
+telephony.lteOnGsmDevice=1
+DEVICE_PROVISIONED=1
+
+# Data modules
+ro.use_data_netmgrd=true
+persist.data.netmgrd.qos.enable=true
+persist.data.mode=concurrent
+ro.data.large_tcp_window_size=true
+
+# Disable QMI logspam
+persist.data.qmi.adb_logmask=0
+
+# NITZ
 persist.rild.nitz_plmn=
 persist.rild.nitz_long_ons_0=
 persist.rild.nitz_long_ons_1=
