@@ -8,7 +8,8 @@ To build CyanogenMod copy this to your local_manifests
   <project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" remote="github" />
   <project name="TheMuppets/proprietary_vendor_oneplus" path="vendor/oneplus" remote="github" revision="cm-13.0" />
 </manifest>
-```Copyright 2015 - The CyanogenMod Project
+```
+Copyright 2015 - The CyanogenMod Project
 
 Device configuration for OnePlus Two.
 =====================================
