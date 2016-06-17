@@ -1,4 +1,4 @@
-To build with the AOSP-CAF repo copy this to your local_manifests
+To build brokenROM copy this to your local_manifests
 ````bash
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
