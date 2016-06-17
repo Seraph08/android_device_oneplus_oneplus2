@@ -16,7 +16,7 @@ Building the source
 The source at AOSP-CAF is well configured for building.
 
     $ . build/envsetup.sh
-    $ ./build-broken -c1 -jX oneplus2
+    $ ./build-broken.sh -c1 -jX oneplus2
   
 where X is the number of jobs you would like to allot to the build system.
 
