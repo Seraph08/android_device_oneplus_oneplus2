@@ -70,6 +70,11 @@ PRODUCT_PACKAGES += \\
 
 PRODUCT_PACKAGES += \\
     libmm-abl
+    qcrilhook \\
+    qcrilmsgtunnel \\
+    libmdmdetect \\
+    libril \\
+    shutdownlistener
 
 PRODUCT_PACKAGES += \\
     libloc_api_v02 \\
@@ -387,7 +392,20 @@ LOCAL_PROPRIETARY_MODULE := true
 include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
-LOCAL_MODULE := libmm-abl
+LOCAL_MODULE := libril
+LOCAL_MODULE_OWNER := $VENDOR
+LOCAL_SRC_FILES_64 := proprietary/lib64/libril.so
+LOCAL_SRC_FILES_32 := proprietary/lib/libril.so
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_PATH_64 := \$(TARGET_OUT_SHARED_LIBRARIES)
+LOCAL_MODULE_PATH_32 := \$(2ND_TARGET_OUT_SHARED_LIBRARIES)
+LOCAL_MULTILIB := both
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := libmm-disp-apis
 LOCAL_MODULE_OWNER := $VENDOR
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmm-abl.so
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmm-abl.so
