@@ -15,6 +15,15 @@ audio.offload.multiple.enabled=true
 audio.offload.gapless.enabled=true
 mm.enable.smoothstreaming=true
 audio.offload.buffer.size.kb=1024
+audio.dolby.ds2.enabled=true
+audio.dolby.ds2.hardbypass=true
+audio.offload.passthrough=false
+persist.dpm.feature=1
+tunnel.audio.encode=false
+av.debug.disable.pers.cache=true
+ro.audio.flinger_standbytime_ms=300
+audio.deep_buffer.media=true
+
 
 # Bluetooth
 bluetooth.hfp.client=1
