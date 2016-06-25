@@ -718,6 +718,11 @@ service amp_unload /system/bin/amploader -u
     disabled
     oneshot
 
+service loc_launcher /system/bin/loc_launcher
+    #loc_launcher will start as root and set its uid to gps
+    class late_start
+    group gps inet net_raw qcom_diag net_admin wifi
+
 # WPA
 service p2p_supplicant /system/bin/wpa_supplicant \
     -ip2p0 -Dnl80211 -c/data/misc/wifi/p2p_supplicant.conf \
