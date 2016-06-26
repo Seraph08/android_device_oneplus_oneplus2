@@ -23,8 +23,6 @@ The source at AOSP-CAF is well configured for building.
 
 where X is the number of jobs you would like to allot to the build system.
 
-Copyright 2015 - The CyanogenMod Project
-
 Device configuration for OnePlus Two.
 =====================================
 
