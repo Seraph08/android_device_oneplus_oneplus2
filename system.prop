@@ -94,6 +94,7 @@ ro.pip.gated=0
 debug.sf.hw=1
 debug.egl.hw=1
 persist.hwc.mdpcomp.enable=true
+dalvik.vm.heapsize=36m
 persist.mdpcomp.4k2kSplit=1
 persist.hwc.mdpcomp.maxpermixer=5
 persist.mdpcomp_perfhint=50
