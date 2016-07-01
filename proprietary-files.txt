@@ -222,6 +222,9 @@ vendor/lib64/libvendorconn.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
+# Display calibration
+-etc/pp_calib_data_jd35695_1080p_cmd_mode_dsi_panel.xml
+
 # DPM
 -priv-app/dpmserviceapp/dpmserviceapp.apk
 bin/dpmd
@@ -416,7 +419,10 @@ vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
 
 # Postprocessing
+-app/colorservice/colorservice.apk
 bin/mm-pp-daemon
+etc/permissions/com.qti.snapdragon.sdk.display.xml
+framework/com.qti.snapdragon.sdk.display.jar
 vendor/lib/libdisp-aba.so
 vendor/lib/libmm-abl.so
 vendor/lib/libmm-abl-oem.so
