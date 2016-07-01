@@ -49,14 +49,13 @@ restorecon -R /sys/devices/system/cpu # must restore after interactive
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load 1
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif 1
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay 19000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 95
+write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 99
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 960000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "65 460800:75 960000:80"
+write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "80 960000:95 1248000:99"
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 39000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 79000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 1
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
 
 # online CPU4
@@ -67,15 +66,14 @@ write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor interactive
 restorecon -R /sys/devices/system/cpu # must restore after interactive
 write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load 1
 write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif 1
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay 19000
+write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay "19000 1400000:39000 1700000:19000"
 write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 99
 write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
 write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 1248000
 write /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy 1
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "70 960000:80 1248000:85"
+write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "90 1248000:95 1800000:70"
 write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 39000
 write /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis 79000
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/ignore_hispeed_on_notif 1
 write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 384000
 
 # restore A57's max
@@ -99,13 +97,13 @@ if [ -e /system/lib/modules/hcube.ko ]; then
     if [ $? -eq 0 ]; then
         restorecon -R /sys/devices/system/cpu/cpu0/core_ctl/
         restorecon -R /sys/devices/system/cpu/cpu4/core_ctl/
-        write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 2
+        write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 0
         write /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 4
         write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 72
         write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 28
         write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 100
         write /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster 1
-        write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 2
+        write /sys/devices/system/cpu/cpu4/core_ctl/task_thres 4
         write /sys/devices/system/cpu/cpu4/core_ctl/hc_on 1
         write /sys/devices/system/cpu/cpu4/core_ctl/hc_down_scale_on 1
         write /sys/devices/system/cpu/cpu4/core_ctl/hc_thres_on 1
@@ -118,6 +116,8 @@ fi
 # Setting B.L scheduler parameters
 write /proc/sys/kernel/sched_migration_fixup 1
 write /proc/sys/kernel/sched_small_task 30
+write /proc/sys/kernel/sched_mostly_idle_load 20
+write /proc/sys/kernel/sched_mostly_idle_nr_run 3
 write /proc/sys/kernel/sched_upmigrate 99
 write /proc/sys/kernel/sched_downmigrate 85
 write /proc/sys/kernel/sched_freq_inc_notify 400000
