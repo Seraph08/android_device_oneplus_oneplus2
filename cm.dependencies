@@ -5,8 +5,8 @@
     "revision": "cm-13.0"
   },
   {
-    "repository": "Seraph08/kernel_oneplus_msm8994",
+    "repository": "Seraph08/android_kernel_oneplus_msm8994",
     "target_path": "kernel/oneplus/msm8994",
-    "revision": "caf"
+    "revision": "cm-13.0"
   }
 ]
