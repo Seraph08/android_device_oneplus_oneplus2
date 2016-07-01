@@ -123,8 +123,10 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    sensors.hal.tof 
-    
+    sensors.hal.tof \
+    libop2_cam \
+    Snap
+
 # Charger
 PRODUCT_PACKAGES += \
     charger_res_images
