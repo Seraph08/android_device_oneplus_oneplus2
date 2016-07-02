@@ -6,7 +6,7 @@ To build with the AOSP-CAF repo copy this to your local_manifests
   <project name="Seraph08/android_device_oppo_common" path="device/oppo/common" remote="github" revision="cm-13.0" />
   <project name="Seraph08/kernel_oneplus_msm8994" path="kernel/oneplus/msm8994" remote="github" revision="caf" />
   <project name="TheMuppets/proprietary_vendor_oneplus" path="vendor/oneplus" remote="github" revision="cm-13.0" />
-  < <project name="Seraph08/android_kernel_oneplus_msm8994" path="kernel/oneplus/msm8994" remote="github" revision="cm-13.0" />
+  <project name="Seraph08/android_kernel_oneplus_msm8994" path="kernel/oneplus/msm8994" remote="github" revision="cm-13.0" />
   <project name="TheMuppets/proprietary_vendor_oneplus" path="vendor/oneplus" remote="github" revision="cm-13.0" />
   <project name="Seraph08/android_hardware_qcom_audio" path="hardware/qcom/audio" remote="github" revision="marshmallow-caf-oneplustwo" />
   <project name="Seraph08/android_hardware_qcom_display" path="hardware/qcom/display" remote="github" revision="marshmallow-caf-8994" />
