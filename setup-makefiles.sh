@@ -57,29 +57,21 @@ done
 # Pick up overlay for features that depend on non-open-source files
 PRODUCT_PACKAGES += \\
     CNEService \\
-    dpmserviceapp
+    com.qti.dpmframework \\
+    dpmapi
 
 PRODUCT_PACKAGES += \\
     qcrilmsgtunnel \\
+    QtiTelephonyService \\
     shutdownlistener \\
     TimeService
 
 PRODUCT_PACKAGES += \\
-<<<<<<< HEAD
-=======
-    fastdormancy \\
-    QtiTelephonyService \\
->>>>>>> 3cdda45... oneplus2: Enable telephony extension
     qcnvitems \\
     qcrilhook
 
 PRODUCT_PACKAGES += \\
     libmm-abl
-    qcrilhook \\
-    qcrilmsgtunnel \\
-    libmdmdetect \\
-    libril \\
-    shutdownlistener
 
 PRODUCT_PACKAGES += \\
     libloc_api_v02 \\
@@ -97,10 +89,6 @@ PRODUCT_PACKAGES += \\
     libqmi_cci \\
     libqmi_client_qmux \\
     libqmiservices
-
-PRODUCT_PACKAGES += \\
-    ims \\
-    imssettings
 
 \$(call inherit-product, vendor/$VENDOR/$DEVICE/$DEVICE-vendor-blobs.mk)
 EOF
@@ -156,38 +144,23 @@ LOCAL_CERTIFICATE := platform
 include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
-LOCAL_MODULE := dpmserviceapp
-LOCAL_MODULE_OWNER := $VENDOR
-LOCAL_SRC_FILES := proprietary/priv-app/dpmserviceapp/dpmserviceapp.apk
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_MODULE_CLASS := APPS
-LOCAL_PRIVILEGED_MODULE := true
-LOCAL_CERTIFICATE := platform
-include \$(BUILD_PREBUILT)
-
-include \$(CLEAR_VARS)
-<<<<<<< HEAD
 LOCAL_MODULE := qcrilmsgtunnel
-=======
-LOCAL_MODULE := QtiTelephonyService
-LOCAL_MODULE_OWNER := $VENDOR
-LOCAL_SRC_FILES := proprietary/app/QtiTelephonyService/QtiTelephonyService.apk
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_MODULE_CLASS := APPS
-LOCAL_CERTIFICATE := platform
-include \$(BUILD_PREBUILT)
-
-include \$(CLEAR_VARS)
-LOCAL_MODULE := qcnvitems
->>>>>>> 3cdda45... oneplus2: Enable telephony extension
 LOCAL_MODULE_OWNER := $VENDOR
 LOCAL_SRC_FILES := proprietary/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
 LOCAL_MODULE_CLASS := APPS
 LOCAL_PRIVILEGED_MODULE := true
+LOCAL_CERTIFICATE := platform
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := QtiTelephonyService
+LOCAL_MODULE_OWNER := $VENDOR
+LOCAL_SRC_FILES := proprietary/app/QtiTelephonyService/QtiTelephonyService.apk
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_MODULE_CLASS := APPS
 LOCAL_CERTIFICATE := platform
 include \$(BUILD_PREBUILT)
 
@@ -209,6 +182,26 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
 LOCAL_MODULE_CLASS := APPS
 LOCAL_CERTIFICATE := platform
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := com.qti.dpmframework
+LOCAL_MODULE_OWNER := $VENDOR
+LOCAL_SRC_FILES := proprietary/framework/com.qti.dpmframework.jar
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := \$(COMMON_JAVA_PACKAGE_SUFFIX)
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_CERTIFICATE := PRESIGNED
+include \$(BUILD_PREBUILT)
+
+include \$(CLEAR_VARS)
+LOCAL_MODULE := dpmapi
+LOCAL_MODULE_OWNER := $VENDOR
+LOCAL_SRC_FILES := proprietary/framework/dpmapi.jar
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := \$(COMMON_JAVA_PACKAGE_SUFFIX)
+LOCAL_MODULE_CLASS := JAVA_LIBRARIES
+LOCAL_CERTIFICATE := PRESIGNED
 include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
@@ -411,20 +404,7 @@ LOCAL_PROPRIETARY_MODULE := true
 include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
-LOCAL_MODULE := libril
-LOCAL_MODULE_OWNER := $VENDOR
-LOCAL_SRC_FILES_64 := proprietary/lib64/libril.so
-LOCAL_SRC_FILES_32 := proprietary/lib/libril.so
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_PATH_64 := \$(TARGET_OUT_SHARED_LIBRARIES)
-LOCAL_MODULE_PATH_32 := \$(2ND_TARGET_OUT_SHARED_LIBRARIES)
-LOCAL_MULTILIB := both
-include \$(BUILD_PREBUILT)
-
-include \$(CLEAR_VARS)
-LOCAL_MODULE := libmm-disp-apis
+LOCAL_MODULE := libmm-abl
 LOCAL_MODULE_OWNER := $VENDOR
 LOCAL_SRC_FILES_64 := proprietary/vendor/lib64/libmm-abl.so
 LOCAL_SRC_FILES_32 := proprietary/vendor/lib/libmm-abl.so
@@ -434,28 +414,6 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_PATH_64 := \$(TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_PATH_32 := \$(2ND_TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MULTILIB := both
-LOCAL_PROPRIETARY_MODULE := true
-include \$(BUILD_PREBUILT)
-
-include \$(CLEAR_VARS)
-LOCAL_MODULE := ims
-LOCAL_MODULE_OWNER := $VENDOR
-LOCAL_SRC_FILES := proprietary/vendor/app/ims/ims.apk
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_MODULE_CLASS := APPS
-LOCAL_CERTIFICATE := platform
-LOCAL_PROPRIETARY_MODULE := true
-include \$(BUILD_PREBUILT)
-
-include \$(CLEAR_VARS)
-LOCAL_MODULE := imssettings
-LOCAL_MODULE_OWNER := $VENDOR
-LOCAL_SRC_FILES := proprietary/vendor/app/imssettings/imssettings.apk
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_MODULE_CLASS := APPS
-LOCAL_CERTIFICATE := platform
 LOCAL_PROPRIETARY_MODULE := true
 include \$(BUILD_PREBUILT)
 

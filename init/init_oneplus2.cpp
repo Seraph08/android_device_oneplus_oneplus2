@@ -34,6 +34,8 @@
 #include "log.h"
 #include "util.h"
 
+void vendor_load_properties() {
+
 #define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
 
 void vendor_load_properties(){
@@ -42,7 +44,7 @@ void vendor_load_properties(){
     int rc;
 
     rc = property_get("ro.cm.device", device);
-    if (!rc || !ISMATCH(device, "oneplus2"))
+    if (!rc || strncmp(device, "oneplus2", PROP_VALUE_MAX))
         return;
 
     property_get("ro.boot.rf_v1", rf_version);

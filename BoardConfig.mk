@@ -52,7 +52,7 @@ TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53.a57
+TARGET_2ND_CPU_VARIANT := cortex-a53
 
 TARGET_CPU_CORTEX_A53 := true
 
@@ -60,7 +60,7 @@ TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
 # Clang
-#USE_CLANG_PLATFORM_BUILD := true
+USE_CLANG_PLATFORM_BUILD := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-5
@@ -122,6 +122,9 @@ QCOM_BT_USE_SMD_TTY := true
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
 
+# Clang
+USE_CLANG_PLATFORM_BUILD := true
+
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(PLATFORM_PATH)/charger/images
@@ -154,8 +157,8 @@ OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
 # Init
-TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_oneplus2
+TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus2
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus2
 TARGET_LIBINIT_DEFINES_FILE := $(PLATFORM_PATH)/init/init_oneplus2.cpp
@@ -168,7 +171,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # RIL
 TARGET_RIL_VARIANT := caf
-BOARD_PROVIDES_LIBRIL := true
 
 # RPC
 TARGET_NO_RPC := true
