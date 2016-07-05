@@ -1,14 +1,25 @@
-To build CyanogenMod copy this to your local_manifests
+To build brokenROM copy this to your local_manifests
 ````bash
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="Seraph08/device_oneplus_oneplus2" path="device/oneplus/oneplus2" remote="github" revision="cm-13.0" />
-  <project name="Seraph08/android_device_oppo_common" path="device/oppo/common" remote="github" revision="cm-13.0" />
+  <project name="Seraph08/device_oneplus_oneplus2" path="device/oneplus/oneplus2" remote="github" revision="m6.0.1" />
+  <project name="Seraph08/android_device_oppo_common" path="device/oppo/common" remote="github" revision="m6.0.1" />
   <project name="Seraph08/android_kernel_oneplus_msm8994" path="kernel/oneplus/msm8994" remote="github" revision="cm-13.0" />
-  <project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" remote="github" />
   <project name="TheMuppets/proprietary_vendor_oneplus" path="vendor/oneplus" remote="github" revision="cm-13.0" />
+  <project name="BrokenROM/packages_apps_SnapdragonCamera" path="packages/apps/SnapdragonCamera" remote="github" revision="m6.0.1" />
+  <project name="Cyanogenmod/android_vendor_qcom_opensource_dataservices" path="vendor/qcom/opensource/dataservices" remote="github" revision="cm-13.0" />
 </manifest>
 ```
+Building the source
+---------------
+
+The source at AOSP-CAF is well configured for building.
+
+    $ . build/envsetup.sh
+    $ ./build-broken.sh -c1 -jX oneplus2
+  
+where X is the number of jobs you would like to allot to the build system.
+
 Copyright 2015 - The CyanogenMod Project
 
 Device configuration for OnePlus Two.
@@ -30,3 +41,4 @@ Front Camera | 5 MP
 Release Date | July 2015
 
 ![OnePlus Two](http://cdn2.gsmarena.com/vv/pics/oneplus/oneplus-two-1.jpg "OnePlus Two")
+
