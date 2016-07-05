@@ -15,16 +15,16 @@ on enable-low-power
     write /sys/devices/soc.0/qcom,bcl.62/hotplug_soc_mask 0
     write /sys/devices/soc.0/qcom,bcl.62/mode "enable"
 
-    # configure governor settings for little cluster
+    # Tune governor for little cores
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load 1
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay 19000
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 98
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 19000
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay "19000 960000:39000 1248000:29000"
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 90
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 960000
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "65 460000:75 960000:80"
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "80 960000:95 1248000:99"
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 40000
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 80000
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
@@ -37,12 +37,9 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay "19000 1400000:39000 1700000:19000"
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 90
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay 19000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 98
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 19000
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 1248000
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy 1
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "70 960000:80 1248000:85"
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "90 1248000:95 1800000:70"
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 40000
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis 80000
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 384000
@@ -57,11 +54,6 @@ on enable-low-power
     write /sys/devices/soc.0/qcom,bcl.62/hotplug_mask 192
     write /sys/devices/soc.0/qcom,bcl.62/hotplug_soc_mask 240
     write /sys/devices/soc.0/qcom,bcl.62/mode "enable"
-
-    # bring all CPUs online
-    write /sys/devices/system/cpu/cpu5/online 1
-    write /sys/devices/system/cpu/cpu6/online 1
-    write /sys/devices/system/cpu/cpu7/online 1
 
     # Configure foreground and background cpuset
     write /dev/cpuset/foreground/cpus 0-7
@@ -108,18 +100,6 @@ on enable-low-power
     write /proc/sys/kernel/sched_boost 0
 
     # Enable rps static configuration
-    write /proc/sys/kernel/sched_upmigrate 95
-    write /proc/sys/kernel/sched_downmigrate 85
-    write /proc/sys/kernel/sched_freq_inc_notify 400000
-    write /proc/sys/kernel/sched_freq_dec_notify 400000
-
-    # disable sched_boost
-    write /proc/sys/kernel/sched_boost 0
-
-    # android background processes are set to nice 10. Never schedule these on the a57s.
-    write /proc/sys/kernel/sched_upmigrate_min_nice 9
-
-    # enable rps static configuration
     write /sys/class/net/rmnet_ipa0/queues/rx-0/rps_cpus 8
     write /sys/class/devfreq/qcom,cpubw.33/governor "bw_hwmon"
     write /sys/class/devfreq/qcom,mincpubw.34/governor "cpufreq"
@@ -136,23 +116,6 @@ on charger
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
 
-    # re-enable thermal and BCL hotplug
-    write /sys/module/msm_thermal/core_control/enabled 1
-    write /sys/devices/soc.0/qcom,bcl.62/mode "disable"
-    write /sys/devices/soc.0/qcom,bcl.62/hotplug_mask 192
-    write /sys/devices/soc.0/qcom,bcl.62/hotplug_soc_mask 240
-    write /sys/devices/soc.0/qcom,bcl.62/mode "enable"
-
-    # change GPU initial power level from 305MHz(level 4) to 180MHz(level 5) for power savings
-    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 5
-
-    start perfd
-
-on charger
-    write /sys/module/lpm_levels/parameters/sleep_disabled 0
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "powersave"
-
-
 on class_start:late_start
     trigger enable-low-power
 
@@ -160,5 +123,4 @@ on property:init.svc.recovery=running
     trigger enable-low-power
 
 on property:dev.bootcomplete=1
-    write /sys/module/lpm_levels/parameters/sleep_disabled 0
     setprop sys.io.scheduler "bfq"
