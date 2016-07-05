@@ -35,6 +35,10 @@
 #include "util.h"
 
 void vendor_load_properties() {
+
+#define ISMATCH(a,b)    (!strncmp(a,b,PROP_VALUE_MAX))
+
+void vendor_load_properties(){
     char device[PROP_VALUE_MAX];
     char rf_version[PROP_VALUE_MAX];
     int rc;
