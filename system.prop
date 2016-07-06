@@ -113,6 +113,9 @@ ro.vendor.extension_library=libqti-perfd-client.so
 ro.min_freq_0=384000
 ro.min_freq_4=384000
 
+# DRM
+drm.service.enabled=true
+
 # limit dex2oat threads to improve thermals
 dalvik.vm.boot-dex2oat-threads=4
 dalvik.vm.dex2oat-threads=2
