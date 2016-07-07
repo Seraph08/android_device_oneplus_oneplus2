@@ -1,4 +1,3 @@
-#
 # Copyright (C) 2016 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,3 +14,4 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_oneplus2.mk
+

@@ -2,14 +2,14 @@ To build with the AOSP-CAF repo copy this to your local_manifests
 ````bash
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="Seraph08/device_oneplus_oneplus2" path="device/oneplus/oneplus2" remote="github" revision="cm-13.0" />
-  <project name="Seraph08/android_device_oppo_common" path="device/oppo/common" remote="github" revision="cm-13.0" />
-  <project name="TheMuppets/proprietary_vendor_oneplus" path="vendor/oneplus" remote="github" revision="cm-13.0" />
+  <project name="Seraph08/device_oneplus_oneplus2" path="device/oneplus/oneplus2" remote="github" revision="caf" />
+  <project name="Seraph08/android_device_oppo_common" path="device/oppo/common" remote="github" revision="m6.0" />
   <project name="Seraph08/android_kernel_oneplus_msm8994" path="kernel/oneplus/msm8994" remote="github" revision="cm-13.0" />
+  <project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" remote="cm" />
   <project name="TheMuppets/proprietary_vendor_oneplus" path="vendor/oneplus" remote="github" revision="cm-13.0" />
-  <project name="Seraph08/android_hardware_qcom_audio" path="hardware/qcom/audio" remote="github" revision="marshmallow-caf-oneplustwo" />
-  <project name="Seraph08/android_hardware_qcom_display" path="hardware/qcom/display" remote="github" revision="marshmallow-caf-8994" />
-  <project name="Seraph08/android_hardware_qcom_media" path="hardware/qcom/media" remote="github" revision="marshmallow-caf-8994" />
+  <project path="hardware/qcom/display-caf/msm8994" name="CyanogenMod/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" revision="cm-13.0-caf-8994" />
+  <project path="hardware/qcom/audio-caf/msm8994" name="CyanogenMod/android_hardware_qcom_audio" groups="qcom,qcom_audio" revision="cm-13.0-caf-8994" />
+  <project path="hardware/qcom/media-caf/msm8994" name="CyanogenMod/android_hardware_qcom_media" groups="qcom" revision="cm-13.0-caf-8994" />
  </manifest>
 ```
 
