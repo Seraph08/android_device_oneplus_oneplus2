@@ -53,7 +53,7 @@ write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 95
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 768000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "65 460800:75 960000:80"
+write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "80 768000:95 1248000:99"
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 39000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 79000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 1
