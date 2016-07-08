@@ -51,9 +51,9 @@ write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif 1
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay 19000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 99
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 960000
+write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 768000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "80 960000:95 1248000:99"
+write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "80 768000:95 1248000:99"
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 39000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 79000
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 384000
@@ -88,7 +88,7 @@ write /sys/devices/system/cpu/cpu7/online 1
 write /sys/module/msm_performance/parameters/cpu_max_freq "4:4294967295 5:4294967295 6:4294967295 7:4294967295"
 
 # input boost configuration
-write /sys/module/cpu_boost/parameters/input_boost_freq "0:787200"
+write /sys/module/cpu_boost/parameters/input_boost_freq "0:768000"
 write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
 # h-cube, if available
