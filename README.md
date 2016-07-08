@@ -3,7 +3,7 @@ To build brokenROM copy this to your local_manifests
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
   <project name="Seraph08/device_oneplus_oneplus2" path="device/oneplus/oneplus2" remote="github" revision="m6.0.1" />
-  <project name="Seraph08/android_device_oppo_common" path="device/oppo/common" remote="github" revision="m6.0.1" />
+  <project name="Seraph08/device_oppo_common" path="device/oppo/common" remote="github" revision="m6.0.1" />
   <project name="Seraph08/android_kernel_oneplus_msm8994" path="kernel/oneplus/msm8994" remote="github" revision="cm-13.0" />
   <project name="TheMuppets/proprietary_vendor_oneplus" path="vendor/oneplus" remote="github" revision="cm-13.0" />
   <project name="BrokenROM/packages_apps_SnapdragonCamera" path="packages/apps/SnapdragonCamera" remote="github" revision="m6.0.1" />
