@@ -11,7 +11,7 @@ To build with the AOSP-CAF repo copy this to your local_manifests
   <project path="hardware/qcom/display-caf/msm8994" name="CyanogenMod/android_hardware_qcom_display" groups="pdk,qcom,qcom_display" remote="github" revision="cm-13.0-caf-8994" />
   <project path="hardware/qcom/audio-caf/msm8994" name="CyanogenMod/android_hardware_qcom_audio" groups="qcom,qcom_audio" remote="github" revision="cm-13.0-caf-8994" />
   <project path="hardware/qcom/media-caf/msm8994" name="CyanogenMod/android_hardware_qcom_media" groups="qcom" remote="github" revision="cm-13.0-caf-8994" />
- </manifest>
+</manifest>
 ```
 
 Building the source
