@@ -152,7 +152,7 @@ TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
 # Init
 TARGET_UNIFIED_DEVICE := true
-TARGET_INIT_VENDOR_LIB := init_oneplus2
+TARGET_INIT_VENDOR_LIB := libinit_oneplus2
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # Keystore
