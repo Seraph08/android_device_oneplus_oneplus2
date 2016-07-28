@@ -295,6 +295,12 @@
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
 
+    <!-- Performance profiles -->
+    <add-resource type="string" name="config_perf_profile_prop"> </add-resource>
+    <string name="config_perf_profile_prop">powerhal</string>
+    <add-resource type="string" name="config_perf_profile_default_entry"> </add-resource>
+    <string name="config_perf_profile_default_entry">1</string>
+
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
          it causes the device to wake up.
          The default is false. -->
