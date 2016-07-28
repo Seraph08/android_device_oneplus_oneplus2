@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
 **
 ** Copyright 2009, The Android Open Source Project
 **
@@ -107,7 +106,8 @@
     <!-- This is the battery capacity in mAh -->
     <item name="battery.capacity">3300</item>
 
-    <array name="wifi.batchedscan"> <!-- mA.  Current figures based on .0801 s/c and 75.48mA while scanning -->
+    <array
+        name="wifi.batchedscan"> <!-- mA.  Current figures based on .0801 s/c and 75.48mA while scanning -->
         <value>.0002</value> <!-- 1-8/hr -->
         <value>.002</value>  <!-- 9-64/hr -->
         <value>.02</value>   <!-- 65-512/hr -->

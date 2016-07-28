@@ -16,11 +16,8 @@
 
 package com.cyanogenmod.settings.doze;
 
-import android.app.ActivityManager;
-import android.app.ActivityManager.RunningServiceInfo;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.UserHandle;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
@@ -28,17 +25,15 @@ import android.util.Log;
 
 public final class Utils {
 
-    private static final String TAG = "DozeUtils";
-    private static final boolean DEBUG = false;
-
-    private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
-
     protected static final String AMBIENT_DISPLAY_KEY = "ambient_display";
     protected static final String PICK_UP_KEY = "pick_up";
     protected static final String TILT_ALWAYS_KEY = "tilt_always";
     protected static final String GESTURE_HAND_WAVE_KEY = "gesture_hand_wave";
     protected static final String GESTURE_POCKET_KEY = "gesture_pocket";
     protected static final String PROXIMITY_ALWAYS_KEY = "proximity_always";
+    private static final String TAG = "DozeUtils";
+    private static final boolean DEBUG = false;
+    private static final String DOZE_INTENT = "com.android.systemui.doze.pulse";
 
     protected static void startService(Context context) {
         if (DEBUG) Log.d(TAG, "Starting service");
