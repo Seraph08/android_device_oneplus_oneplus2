@@ -29,4 +29,4 @@ Rear Camera  | 13 MP, dual-LED flash
 Front Camera | 5 MP
 Release Date | July 2015
 
-![OnePlus Two](http://cdn2.gsmarena.com/vv/pics/oneplus/oneplus-two-1.jpg "OnePlus Two")
+![OnePlus Two](http://cdn2.gsmarena.com/vv/pics/oneplus/oneplus-two-2.jpg "OnePlus Two")
