@@ -125,6 +125,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
+    <add-resource type="integer" name="config_deviceHardwareKeys"></add-resource>
     <integer name="config_deviceHardwareKeys">83</integer>
 
     <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
@@ -151,6 +152,7 @@
         This needs to match the constants in
         policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
     -->
+    <add-resource type="integer" name="config_longPressOnHomeBehavior"></add-resource>
     <integer name="config_longPressOnHomeBehavior">3</integer>
 
     <!-- Control the behavior when the user long presses the app switch button.
@@ -163,6 +165,7 @@
          This needs to match the constants in
          policy/src/com/android/internal/policy/impl/PhoneWindowManager.java
     -->
+    <add-resource type="integer" name="config_longPressOnAppSwitchBehavior"></add-resource>
     <integer name="config_longPressOnAppSwitchBehavior">1</integer>
 
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
@@ -292,6 +295,12 @@
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
 
+    <!-- Performance profiles -->
+    <add-resource type="string" name="config_perf_profile_prop"> </add-resource>
+    <string name="config_perf_profile_prop">powerhal</string>
+    <add-resource type="string" name="config_perf_profile_default_entry"> </add-resource>
+    <string name="config_perf_profile_default_entry">1</string>
+
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
          it causes the device to wake up.
          The default is false. -->
@@ -368,9 +377,7 @@
 
     <!-- Configure wifi tcp buffersizes in the form:
          rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
-    <string name="config_wifi_tcp_buffers" translatable="false">
-        524288,2097152,4194304,262144,524288,1048576
-    </string>
+    <string name="config_wifi_tcp_buffers" translatable="false">524288,2097152,4194304,262144,524288,1048576</string>
 
     <!-- Boolean indicating if current platform supports BLE peripheral mode -->
     <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
