@@ -60,7 +60,7 @@ TARGET_BOARD_SUFFIX := _64
 TARGET_USES_64_BIT_BINDER := true
 
 # Clang
-#USE_CLANG_PLATFORM_BUILD := true
+USE_CLANG_PLATFORM_BUILD := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-5
@@ -154,9 +154,11 @@ OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/include
 
 # Init
-TARGET_UNIFIED_DEVICE := true
 TARGET_INIT_VENDOR_LIB := libinit_oneplus2
+TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus2
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
+TARGET_RECOVERY_DEVICE_MODULES := libinit_oneplus2
+TARGET_LIBINIT_DEFINES_FILE := $(PLATFORM_PATH)/init/init_oneplus2.cpp
 
 # Keystore
 TARGET_PROVIDES_KEYMASTER := true
@@ -166,7 +168,6 @@ TARGET_PROVIDES_LIBLIGHT := true
 
 # RIL
 TARGET_RIL_VARIANT := caf
-BOARD_PROVIDES_LIBRIL := true
 
 # RPC
 TARGET_NO_RPC := true

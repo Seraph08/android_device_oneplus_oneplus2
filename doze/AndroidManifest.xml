@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cyanogenmod.settings.doze"
-    android:sharedUserId="android.uid.system"
     android:versionCode="1"
-    android:versionName="1.0">
+    android:versionName="1.0"
+    android:sharedUserId="android.uid.system">
 
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <uses-sdk
         android:minSdkVersion="21"
-        android:targetSdkVersion="21" />
+        android:targetSdkVersion="21"/>
 
     <application
         android:label="OneplusDoze"
@@ -23,9 +23,9 @@
             </intent-filter>
         </receiver>
 
-        <service
-            android:name="com.cyanogenmod.settings.doze.DozeService"
-            android:permission="OneplusDozeService"></service>
+        <service android:name="com.cyanogenmod.settings.doze.DozeService"
+                 android:permission="OneplusDozeService">
+        </service>
 
         <activity
             android:name=".DozeSettings"
@@ -34,7 +34,6 @@
             <intent-filter>
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
-
             <meta-data
                 android:name="com.android.settings.category"
                 android:value="com.android.settings.category.device" />
@@ -45,3 +44,4 @@
 
     </application>
 </manifest>
+
