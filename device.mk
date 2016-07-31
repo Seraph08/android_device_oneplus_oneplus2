@@ -91,12 +91,20 @@ PRODUCT_PACKAGES += \
     audio.primary.msm8994 \
     audio.r_submix.default \
     audio.usb.default \
-    audio_policy.msm8994 \
+    audio_policy.msm8994
+
+PRODUCT_PACKAGES += \
+    tinycap \
+    tinymix \
+    tinypcminfo \
+    tinyplay
+
+PRODUCT_PACKAGES += \
     libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
-    libqcomvoiceprocessing \
-    tinymix
+    libqcomvoiceprocessing
+
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/acdb/MTP_Bluetooth_cal.acdb:system/etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb \
@@ -123,6 +131,8 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    sensors.hal.tof \
+    libop2_cam \
     Snap
 
 # Charger
@@ -255,6 +265,13 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
+# Connectivity Engine support (CNE)
+PRODUCT_PACKAGES += \
+    cneapiclient \
+    com.quicinc.cne \
+    libcnefeatureconfig \
+    services-ext
+
 # Sensors
 PRODUCT_PACKAGES += \
     sensors.msm8994
@@ -303,6 +320,13 @@ PRODUCT_PACKAGES += \
     hostapd_default.conf \
     hostapd.accept \
     hostapd.deny
+
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    fsck.exfat \
+    e2fsck \
+    make_ext4fs \
+    setup_fs
 
 # Inherit from oppo-common
 $(call inherit-product, device/oppo/common/common.mk)

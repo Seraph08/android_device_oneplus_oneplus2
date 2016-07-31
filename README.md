@@ -1,4 +1,17 @@
+To build CyanogenMod copy this to your local_manifests
+````bash
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="Seraph08/device_oneplus_oneplus2" path="device/oneplus/oneplus2" remote="github" revision="cm-13.0" />
+  <project name="Seraph08/android_device_oppo_common" path="device/oppo/common" remote="github" revision="cm-13.0" />
+  <project name="Seraph08/android_kernel_oneplus_msm8994" path="kernel/oneplus/msm8994" remote="github" revision="cm-13.0" />
+  <project name="CyanogenMod/android_device_qcom_common" path="device/qcom/common" remote="github" />
+  <project name="TheMuppets/proprietary_vendor_oneplus" path="vendor/oneplus" remote="github" revision="cm-13.0" />
+</manifest>
+```
+=======
 
+>>>>>>> dd4cbcc19d61bee6dea0eab8013e4642eee6ccdc
 Copyright 2015 - The CyanogenMod Project
 
 Device configuration for OnePlus Two.
