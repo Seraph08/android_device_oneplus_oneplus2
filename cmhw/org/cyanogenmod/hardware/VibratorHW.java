@@ -16,9 +16,9 @@
 
 package org.cyanogenmod.hardware;
 
-import org.cyanogenmod.hardware.util.FileUtils;
-
 import java.io.File;
+
+import org.cyanogenmod.hardware.util.FileUtils;
 
 public class VibratorHW {
 
@@ -28,27 +28,27 @@ public class VibratorHW {
         return new File(AMP_PATH).exists();
     }
 
-    public static int getMaxIntensity() {
+    public static int getMaxIntensity()  {
         return 3596;
     }
 
-    public static int getMinIntensity() {
+    public static int getMinIntensity()  {
         return 116;
     }
 
-    public static int getWarningThreshold() {
+    public static int getWarningThreshold()  {
         return 3248;
     }
 
-    public static int getCurIntensity() {
+    public static int getCurIntensity()  {
         return Integer.parseInt(FileUtils.readOneLine(AMP_PATH));
     }
 
-    public static int getDefaultIntensity() {
+    public static int getDefaultIntensity()  {
         return 3000;
     }
 
-    public static boolean setIntensity(int intensity) {
+    public static boolean setIntensity(int intensity)  {
         return FileUtils.writeLine(AMP_PATH, String.valueOf(intensity));
     }
 }
