@@ -118,9 +118,19 @@ ro.hwui.text_large_cache_width=3072
 ro.hwui.text_large_cache_height=4096
 
 # QC vendor extension
-ro.core_ctl_min_cpu=2
-ro.core_ctl_max_cpu=4
-ro.qualcomm.perf.cores_online=1
+# Enable low power video mode for 4K encode
+vidc.debug.perf.mode=2
+vidc.enc.dcvs.extra-buff-count=2
+
+# Camera
+persist.camera.cpp.duplication=false
+camera.disable_zsl_mode=1
+media.camera.ts.monotonic=0
+
+# Time services
+persist.timed.enable=true
+
+# Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.frp.pst=/dev/block/bootdevice/by-name/config
 drm.service.enabled=true
