@@ -77,6 +77,19 @@ ro.sf.lcd_density=480
 ro.opengles.version=196610
 
 # QC vendor extension
+# Enable low power video mode for 4K encode
+vidc.debug.perf.mode=2
+vidc.enc.dcvs.extra-buff-count=2
+
+# Camera
+persist.camera.cpp.duplication=false
+camera.disable_zsl_mode=1
+media.camera.ts.monotonic=0
+
+# Time services
+persist.timed.enable=true
+
+# Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.frp.pst=/dev/block/bootdevice/by-name/config
 drm.service.enabled=true
