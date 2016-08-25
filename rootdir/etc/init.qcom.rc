@@ -40,9 +40,6 @@ on early-fs
 on init
     chmod 0644 /proc/cmdline
 
-    # Shim camera lib
-    export LD_SHIM_LIBS "/system/lib/hw/camera.msm8994.so|libop2_cam.so"
-
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
