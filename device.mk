@@ -269,6 +269,3 @@ PRODUCT_PACKAGES += \
     hostapd_default.conf \
     hostapd.accept \
     hostapd.deny
-
-# Inherit from oppo-common
-$(call inherit-product, device/oppo/common/common.mk)
