@@ -20,6 +20,9 @@
 # definition file).
 #
 
+# Inherit from oppo-common
+-include device/oppo/common/BoardConfigCommon.mk
+
 # Inherit from qcom-common
 include device/qcom/common/BoardConfigCommon.mk
 
