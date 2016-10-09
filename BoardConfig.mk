@@ -104,6 +104,10 @@ QCOM_BT_USE_SMD_TTY := true
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
+TARGET_USE_VENDOR_CAMERA_EXT := true
+
+# Clang
+USE_CLANG_PLATFORM_BUILD := true
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
@@ -116,16 +120,30 @@ BOARD_USES_QCNE := true
 # Cpusets
 ENABLE_CPUSETS := true
 
+#Enable HW based full disk encryption
+TARGET_HW_DISK_ENCRYPTION := false
+
+#Enable peripheral manager
+TARGET_PER_MGR_ENABLED := true
+
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+
+# Added to indicate that protobuf-c is supported in this build
+PROTOBUF_SUPPORTED := false
+
 # GPS
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
 
 # Graphics
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-TARGET_USES_ION := true
-TARGET_USES_NEW_ION_API :=true
 TARGET_USES_C2D_COMPOSITION := true
 USE_OPENGL_RENDERER := true
+TARGET_USES_ION := true
+TARGET_USES_NEW_ION_API :=true
+TARGET_USES_OVERLAY := true
+TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
+MAX_VIRTUAL_DISPLAY_DIMENSION := 2048
 
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
@@ -155,6 +173,10 @@ TARGET_NO_RPC := true
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 BOARD_GLOBAL_CFLAGS += -DCOMPAT_SENSORS_M
+
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.msm
+
+TARGET_USES_IMS := true
 
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)

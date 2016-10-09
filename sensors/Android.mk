@@ -6,7 +6,8 @@ LOCAL_MODULE := sensors.ssc.wrapper
 LOCAL_PROPRIETARY_MODULE := true
 
 LOCAL_SRC_FILES := \
-    SensorsWrapper.c
+    SensorsWrapper.c \
+    hals.conf
 
 LOCAL_SHARED_LIBRARIES := libdl liblog
 
