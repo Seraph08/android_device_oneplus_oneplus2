@@ -1,10 +1,20 @@
 [
   {
-    "repository": "android_device_oppo_common",
-    "target_path": "device/oppo/common"
+    "remote": "github",
+    "repository": "Seraph08/android_device_oppo_common",
+    "target_path": "device/oppo/common",
+    "revision": "cm-14.0"
   },
   {
-    "repository": "android_kernel_oneplus_msm8994",
-    "target_path": "kernel/oneplus/msm8994"
-  }
+    "remote": "github",
+    "repository": "Seraph08/android_kernel_oneplus_msm8994",
+    "target_path": "kernel/oneplus/msm8994",
+    "revision": "cm-14.0"
+  },
+  {
+    "remote": "github",
+    "repository": "Seraph08/proprietary_vendor_oneplus",
+    "target_path": "vendor/oneplus",
+    "revision": "cm-14.0"
+  },
 ]
