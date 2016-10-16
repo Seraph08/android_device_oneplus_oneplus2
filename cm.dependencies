@@ -16,5 +16,5 @@
     "repository": "Seraph08/proprietary_vendor_oneplus",
     "target_path": "vendor/oneplus",
     "revision": "cm-14.0"
-  },
+  }
 ]
