@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_oneplus2.mk
+    $(LOCAL_DIR)/nitrogen_oneplus2.mk
